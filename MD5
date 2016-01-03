@@ -1,0 +1,15 @@
+f85ba49de037e5517ea94b375bf60515 *DESCRIPTION
+769bdbb0572f2eefda48945aefb690fc *LICENSE
+ac4def4bfde99a6da88b407c3e23cb75 *NAMESPACE
+b68733ba6cccf8f2d99859bd6633b8f7 *R/httping-package.R
+4cfee08eac2620d126a1f4758b277baa *R/ping.R
+6a0713a2154428316a00a208857957aa *R/time.R
+a7e3101ad5205f595400a5de2ec8a168 *R/zzz.R
+be0d4f405a60174a86bbb89c8d88e3bc *README.md
+763271400f661ca60f28cbb026789209 *man/httping-package.Rd
+607bfc1612bb060976b369050e6ed0e1 *man/ping.Rd
+b275a3070a668efaef33d61418df51b7 *man/pipe.Rd
+d73dbbfdc20333186bf7a955e31001d9 *man/time.Rd
+6512bb7025727199427c2f1acd00b839 *tests/test-all.R
+3c9b044cb14ca03aaefc263973c16e9e *tests/testthat/test-ping.R
+fe5d54c52ba4300bf578f1d7022a1803 *tests/testthat/test-time.R
