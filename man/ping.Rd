@@ -9,25 +9,25 @@ ping(url, verb = GET, ...)
 \arguments{
 \item{url}{A url}
 
-\item{verb}{(character) An http verb, default: \code{\link[httr]{GET}}}
+\item{verb}{(character) An http verb, default: \code{\link[httr:GET]{httr::GET()}}}
 
-\item{...}{Any \code{httr} verb parameters passed on to those functions}
+\item{...}{Any \pkg{httr} verb parameters passed on to those functions}
 }
 \description{
 Ping a url, doing a single call, with any http verbs
 }
 \examples{
 \dontrun{
-"http://httpbin.org/get" \%>\% ping()
-ping("http://httpbin.org/get")
-"http://httpbin.org/get" \%>\% ping(config=verbose())
-ping("http://httpbin.org/get", config=verbose())
-"http://httpbin.org/get" \%>\% ping(config=c(verbose(), accept_json()))
+"https://mockbin.com/request" \%>\% ping()
+ping("https://mockbin.com/request")
+"https://mockbin.com/request" \%>\% ping(config=verbose())
+ping("https://mockbin.com/request", config=verbose())
+"https://mockbin.com/request" \%>\% ping(config=c(verbose(), accept_json()))
 
-"http://httpbin.org/get" \%>\% ping()
-"http://httpbin.org/get" \%>\% ping(verb=HEAD)
-"http://httpbin.org/get" \%>\% ping(verb=PUT)
-"http://google.com" \%>\% ping()
+"https://mockbin.com/request" \%>\% ping()
+"https://mockbin.com/request" \%>\% ping(verb=HEAD)
+"https://mockbin.com/request" \%>\% ping(verb=PUT)
+"https://google.com" \%>\% ping()
 
 # pass just a port number, tries to resolve, fails if not found
 # "9200" \%>\% ping()
@@ -38,4 +38,3 @@ ping("http://httpbin.org/get", config=verbose())
 # ping("9200")
 }
 }
-

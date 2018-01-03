@@ -3,19 +3,19 @@
 #' @export
 #'
 #' @param url A url
-#' @param verb (character) An http verb, default: \code{\link[httr]{GET}}
-#' @param ... Any \code{httr} verb parameters passed on to those functions
+#' @param verb (character) An http verb, default: [httr::GET()]
+#' @param ... Any \pkg{httr} verb parameters passed on to those functions
 #' @examples \dontrun{
-#' "http://httpbin.org/get" %>% ping()
-#' ping("http://httpbin.org/get")
-#' "http://httpbin.org/get" %>% ping(config=verbose())
-#' ping("http://httpbin.org/get", config=verbose())
-#' "http://httpbin.org/get" %>% ping(config=c(verbose(), accept_json()))
+#' "https://mockbin.com/request" %>% ping()
+#' ping("https://mockbin.com/request")
+#' "https://mockbin.com/request" %>% ping(config=verbose())
+#' ping("https://mockbin.com/request", config=verbose())
+#' "https://mockbin.com/request" %>% ping(config=c(verbose(), accept_json()))
 #'
-#' "http://httpbin.org/get" %>% ping()
-#' "http://httpbin.org/get" %>% ping(verb=HEAD)
-#' "http://httpbin.org/get" %>% ping(verb=PUT)
-#' "http://google.com" %>% ping()
+#' "https://mockbin.com/request" %>% ping()
+#' "https://mockbin.com/request" %>% ping(verb=HEAD)
+#' "https://mockbin.com/request" %>% ping(verb=PUT)
+#' "https://google.com" %>% ping()
 #'
 #' # pass just a port number, tries to resolve, fails if not found
 #' # "9200" %>% ping()
@@ -33,7 +33,7 @@ ping <- function(url, verb=GET, ...) {
 
 #' @export
 print.http_ping <- function(x, ...){
-  vv <- http_code(x$status)
+  vv <- httpcode::http_code(x$status)
   cat(paste0("<http ping> ", x$status), sep = "\n")
   cat(paste0("  Message: ", vv$message), sep = "\n")
   cat(paste0("  Description: ", vv$explanation), sep = "\n")
@@ -60,5 +60,5 @@ is_url <- function(x){
 is_port <- function(x) grepl("[[:digit:]]", x) && nchar(x) == 4
 
 add_http <- function(x){
-  if ( !grepl("http://", x, ignore.case = TRUE) ) paste0("http://", x) else x
+  if ( !grepl("https?://", x, ignore.case = TRUE) ) paste0("http://", x) else x
 }
